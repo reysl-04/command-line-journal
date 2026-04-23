@@ -1,0 +1,21 @@
+{
+  "name": "command-line-journal",
+  "version": "1.0.0",
+  "description": "A command-line tool to add, list, and delete journal entries. Entries are stored locally in a JSON file.",
+  "main": "journal.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reysl-04/command-line-journal.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/reysl-04/command-line-journal/issues"
+  },
+  "homepage": "https://github.com/reysl-04/command-line-journal#readme"
+}
