@@ -16,5 +16,5 @@ export function add(text) {
 
     entries.push(entry);
     writeEntries(entries);
-    console.log(`Added entry [${entry.text}]`)
+    console.log(`Added entry: [${entry.text}]`)
 }
