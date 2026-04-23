@@ -19,7 +19,11 @@ export function readEntry() {
         return 
     }
     const raw = await fs.readFile(FILE_PATH, 'utf-8')
-    const parsed = json.parsed(raw)
+    const parsed = JSON.parsed(raw)
     
     return parsed
+}
+
+export function writeEntry(entries) {
+    fs.writeFile(FILE_PATH, JSON.stringify(entries));
 }
