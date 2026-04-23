@@ -16,7 +16,7 @@ const FILE_PATH = path.join(__dirname, 'entries.json');
 
 export function readEntry() {
     if (!existsSync(FILE_PATH)) {
-        return 
+        return [];
     }
     const raw = await fs.readFile(FILE_PATH, 'utf-8')
     const parsed = JSON.parsed(raw)
