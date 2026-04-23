@@ -8,22 +8,25 @@ for a database, this is the only file that changes. That's the point of isolatin
 
 */
 
-import fs from "node:fs/promises";
-import { existsSync } from "node:fs";
+import fs from "node:fs";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const FILE_PATH = path.join(__dirname, 'entries.json');
 
-export function readEntry() {
-    if (!existsSync(FILE_PATH)) {
+export function readEntries() {
+    if (!fs.existsSync(FILE_PATH)) {
         return [];
     }
-    const raw = await fs.readFile(FILE_PATH, 'utf-8')
-    const parsed = JSON.parsed(raw)
+    const raw = fs.readFileSync(FILE_PATH, 'utf-8');
+    const parsed = JSON.parse(raw);
     
     return parsed
 }
 
-export function writeEntry(entries) {
-    fs.writeFile(FILE_PATH, JSON.stringify(entries));
+export function writeEntries(entries) {
+    fs.writeFileSync(FILE_PATH, JSON.stringify(entries, null, "\t"));
 }

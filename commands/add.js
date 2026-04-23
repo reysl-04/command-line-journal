@@ -1,19 +1,20 @@
-import { readEntry, writeEntry } from "storage.js";
+import { readEntries, writeEntries } from "../storage.js";
 
 export function add(text) {
-    if (!text || text.trim() === '') {
+    const cleanText = text?.trim()
+    if (!cleanText) {
         console.error("Error: entry text can't be empty")
         process.exit(1)
     }
 
-    const entries = readEntry();
+    const entries = readEntries();
     const entry = {
-        id: Date.name(),
+        id: Date.now(),
         date: new Date().toISOString(),
         text: text.trim()
     };
 
     entries.push(entry);
-    writeEntry(entries);
-    console.log(`Added entry [${entry.id}]`)
+    writeEntries(entries);
+    console.log(`Added entry [${entry.text}]`)
 }
