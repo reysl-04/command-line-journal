@@ -1,6 +1,6 @@
 import { readEntry, writeEntry } from "storage.js";
 
-function add(text) {
+export function add(text) {
     if (!text || text.trim() === '') {
         console.error("Error: entry text can't be empty")
         process.exit(1)
